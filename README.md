@@ -126,10 +126,10 @@ if __name__ == "__main__":
 ![MODEL](https://github.com/barathsubramani/WDM_EXP5/blob/main/1.png)
 
 ## OR
-https://github.com/barathsubramani/WDM_EXP5/blob/main/2.png
+![MODEL](https://github.com/barathsubramani/WDM_EXP5/blob/main/2.png)
 
 ## NOT
-https://github.com/barathsubramani/WDM_EXP5/blob/main/3.png
+![MODEL](https://github.com/barathsubramani/WDM_EXP5/blob/main/3.png)
 
 ### Result:
 Thus, To implement Information Retrieval Using Boolean Model in Python has been executed sucessfully.
