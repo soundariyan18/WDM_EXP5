@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
 ### Output:
 ## AND
-https://github.com/barathsubramani/WDM_EXP5/blob/main/1.png
+![MODEL](https://github.com/barathsubramani/WDM_EXP5/blob/main/1.png)
 
 ## OR
 https://github.com/barathsubramani/WDM_EXP5/blob/main/2.png
