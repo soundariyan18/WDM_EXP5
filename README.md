@@ -1,5 +1,5 @@
 ### EX5 Information Retrieval Using Boolean Model in Python
-### DATE: 
+### DATE: 21-04-25
 ### AIM: To implement Information Retrieval Using Boolean Model in Python.
 ### Description:
 <div align = "justify">
@@ -62,7 +62,40 @@ The Boolean model in Information Retrieval (IR) is a fundamental model used for 
         print(list(self.index.keys()))
 
     def boolean_search(self, query):
-        # TYPE YOUR CODE HERE
+        query = query.lower().split()
+        result_docs = None
+        all_docs = set(range(1, len(self.documents_matrix) + 1))  # Set of all document IDs
+
+        i = 0
+        while i < len(query):
+            term = query[i]
+            
+            if term == "and":
+                i += 1
+                continue  # AND is implicit, so we skip it.
+            
+            elif term == "or":
+                i += 1
+                next_term = query[i]
+                if next_term in self.index:
+                    result_docs = result_docs | self.index[next_term] if result_docs else self.index[next_term]
+            
+            elif term == "not":
+                i += 1
+                next_term = query[i]
+                if next_term in self.index:
+                    result_docs = result_docs - self.index[next_term] if result_docs else all_docs - self.index[next_term]
+            
+            else:
+                if term in self.index:
+                    if result_docs is None:
+                        result_docs = self.index[term]
+                    else:
+                        result_docs = result_docs & self.index[term]  # AND by default
+            
+            i += 1
+
+        return result_docs if result_docs else set()
 
 if __name__ == "__main__":
     indexer = BooleanRetrieval()
@@ -89,5 +122,14 @@ if __name__ == "__main__":
 
 
 ### Output:
+## AND
+![model](1.png)
+
+## OR
+![model](2.png)
+
+## NOT
+![model](3.png)
 
 ### Result:
+Thus, To implement Information Retrieval Using Boolean Model in Python has been executed sucessfully.
